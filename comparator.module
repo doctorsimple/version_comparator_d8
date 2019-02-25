@@ -20,8 +20,9 @@ function comparator_help($route_name, RouteMatchInterface $route_match) {
 
 function comparator_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   if ($form_id == "node_text_for_comparison_form") {
-   // kint($form);
-    $form['title']['widget'][0]['value']['#type'] = 'hidden';
-   $form['#attached']['library'][] = 'comparator/form-autofill';
+    $form['title']['widget'][0]['value']['#description'] = 'The title will be autofilled based on the chapter number if you leave it blank';
+    //kint( $form['#validate']);
+
+    $form['#attached']['library'][] = 'comparator/form-autofill';
   }
 }
