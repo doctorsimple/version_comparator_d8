@@ -26,3 +26,17 @@ function comparator_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $for
     $form['#attached']['library'][] = 'comparator/form-autofill';
   }
 }
+
+/**
+ * Implements hook_theme()
+ * @return mixed
+ */
+function comparator_theme() {
+  return array(
+    'comparator' => array(
+      'variables' => array(
+        'dummy' => 'foobazee'
+      )
+    )
+  );
+}
