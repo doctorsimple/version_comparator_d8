@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_comparator_text
+    - node.type.text_for_comparison
+id: node.text_for_comparison.field_comparator_text
+field_name: field_comparator_text
+entity_type: node
+bundle: text_for_comparison
+label: 'Comparator Text'
+description: 'The text of this chapter, of this version'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

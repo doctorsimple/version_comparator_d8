@@ -1,0 +1,15 @@
+# node.type.text_for_comparison
+
+langcode: en
+status: true
+dependencies:
+    enforced:
+      module:
+        - comparator
+name: 'Text for Comparison'
+type: text_for_comparison
+description: 'A numbered verse that belongs to a certain Book and Author'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

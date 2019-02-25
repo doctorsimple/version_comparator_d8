@@ -1,0 +1,6 @@
+form-autofill:
+  version: 1.x
+  js:
+    js/form-autofill.js : {}
+  dependencies:
+    - core/jquery

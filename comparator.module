@@ -1,0 +1,27 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function comparator_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.comparator':
+      return t('
+        <h2>Text comparison tool</h2>
+        <p> This module creates a new content type, "Text for comparison". Each content item has a Book, Author,
+        and Verse property. A block can be used to display the text of a Book from different Authors, with the Verses
+        lined up visually for comparison</p>
+         ');
+  }
+}
+
+
+function comparator_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id == "node_text_for_comparison_form") {
+   // kint($form);
+    $form['title']['widget'][0]['value']['#type'] = 'hidden';
+   $form['#attached']['library'][] = 'comparator/form-autofill';
+  }
+}

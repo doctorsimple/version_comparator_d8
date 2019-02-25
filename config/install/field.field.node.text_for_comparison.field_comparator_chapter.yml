@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_comparator_chapter
+    - node.type.text_for_comparison
+id: node.text_for_comparison.field_comparator_chapter
+field_name: field_comparator_chapter
+entity_type: node
+bundle: text_for_comparison
+label: 'Comparator Chapter'
+description: 'Chapter or verse number of this section of text'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

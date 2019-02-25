@@ -1,0 +1,14 @@
+name: Version Comparator
+
+description: Compares multiple versions of a text that is divided into verses, visually aligning the verses.
+
+package: Custom
+
+type: module
+
+core: 8.x
+
+dependencies:
+  - drupal:views
+
+configure: comparator.settings
