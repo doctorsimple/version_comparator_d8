@@ -31,11 +31,23 @@ function comparator_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $for
  * Implements hook_theme()
  * @return mixed
  */
-function comparator_theme() {
+function comparator_theme($existing, $type, $theme, $path) {
+  $connection = \Drupal::database();
+  $query =   $connection->query('SELECT DISTINCT field_comparator_author_value FROM {node__field_comparator_author}');
+  $authors = [];
+  if ($query) {
+    while ( $row = $query->fetchAssoc() ) {
+      $authors[] = $row['field_comparator_author_value'];
+    }
+  }
+
+
+
+
   return array(
     'comparator' => array(
       'variables' => array(
-        'dummy' => 'foobazee'
+        'authors' => $authors
       )
     )
   );

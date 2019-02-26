@@ -1,9 +1,10 @@
-<div id="selectbuttonwrapper">
-
+<div id="selectbuttonswrapper">
+{%  for author in authors %}
+    <button class="btn btn-default author-select" value="{{ author }}">{{ author }}</button>
+{% endfor %}
 </div>
 
 <div id="textswrapper">
 
 </div>
 
-{{ dummy }}

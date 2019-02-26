@@ -1,6 +1,21 @@
 form-autofill:
-  version: 1.x
+  version: VERSION
   js:
-    js/form-autofill.js : {}
+    js/form-autofill.js: {}
   dependencies:
     - core/jquery
+
+comparator-block:
+  version: VERSION
+  css:
+    layout:
+      css/comparatorstyles.css: {}
+  js:
+    js/comparator.js: {}
+    js/jquery.matchHeight.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+    - core/drupal.ajax
+    - core/views.ajax

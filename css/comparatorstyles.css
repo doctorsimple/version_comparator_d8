@@ -5,6 +5,7 @@
 #selectbuttonswrapper button.author-select {
   border: 3px solid #666;
   border-radius: 5px;
+  border-color: rgba(180,180,180,.6);
 }
 
 #textswrapper {
@@ -13,9 +14,10 @@
   align-items: flex-start;
   overflow:auto;
   height: 100%;
+  min-height: 60px;
   bottom: 10px;
 }
-#textswrapper .view-version-comparator-book {
+#textswrapper .view-comparator-book {
   margin: 0 1em 0 0;
   border: 2px black solid;
   border-radius: 2px;
@@ -45,7 +47,7 @@
 #textswrapper  .vc-book-header .translator-name {
   margin-left: .4em;
 }
-#textswrapper .views-field-version-comparator-text {
+#textswrapper comparator-text {
   white-space: pre-line;
 }
 #textswrapper .views-field-title {

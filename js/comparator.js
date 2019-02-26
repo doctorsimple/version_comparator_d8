@@ -1,0 +1,59 @@
+Drupal.behaviors.versionComparator = {
+  attach : function(context, settings) {
+    jQuery('#selectbuttonswrapper', context).on('click', '.author-select',  addTranslator)
+  }
+
+
+}
+
+function addTranslator(e){
+  //  var $t = jQuery('#translators');
+  var tname = e.target.value;
+  var $textswrapper = jQuery('#textswrapper');
+  $textswrapper.append("<div id='tilethrobber'><i class='glyphicon glyphicon-refresh glyphicon-spin'>PLaceholder</i></div>");
+  var $removedbutton = jQuery(e.target).detach();
+  jQuery.post(
+      drupalSettings.path.baseUrl+'views/ajax',
+      {
+        view_name : 'comparator_book',
+        view_display_id : 'block_1',
+        view_args : tname,
+      },
+      function(response) {
+        for (r in response)
+        {
+
+          if (response[r].command == 'insert' && response[r].method == 'replaceWith') {
+            var viewHtml = response[r].data;
+            $textswrapper.find('#tilethrobber').remove();
+            $textswrapper.append(viewHtml);
+            jQuery('.vc-book-header').width('auto');
+            jQuery('#textswrapper .view-header').width('auto');
+            var bookscount = jQuery('.view-comparator-book').length;
+            $textswrapper.find('.view-comparator-book')
+            //Adjust row heights
+                .last().find('.views-row').each( function(i){
+              if ( bookscount == 1) {
+                return false;
+              }
+              var $samerows = jQuery('.views-row-' + (i+1));
+              jQuery($samerows).matchHeight();
+            });
+            //Set headers
+            jQuery('.vc-book-header').each(function (i) {
+              var setwidth = jQuery(this).parents('.view-header').width();
+              jQuery(this).width(setwidth);
+              jQuery(this).parents('.view-header').width(setwidth);
+            })
+            // jQuery('#textswrapper .vc-book-header')
+            //     .affix({
+            //           offset: {
+            //             top: jQuery('#textswrapper').offset().top, target: '.view-header'
+            //           }
+            //         }
+            //     );
+          }
+        }
+      }
+  )
+}
