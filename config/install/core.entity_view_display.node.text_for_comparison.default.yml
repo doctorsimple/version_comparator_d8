@@ -9,6 +9,7 @@ dependencies:
     - node.type.text_for_comparison
   module:
     - user
+    - comparator
 id: node.text_for_comparison.default
 targetEntityType: node
 bundle: text_for_comparison
@@ -44,7 +45,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    type: text_default
     region: content
   links:
     weight: 100

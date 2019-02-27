@@ -24,6 +24,10 @@
   flex: 0 1 100%;
   background: rgb(227,236,207);
 }
+#textswrapper .view-header {
+  position: sticky;
+  top:1px;
+}
 #textswrapper .views-row {
   padding: 1em .6em 2em;
   align-self: flex-start;

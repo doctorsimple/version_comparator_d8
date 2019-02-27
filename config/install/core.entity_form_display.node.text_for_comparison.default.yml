@@ -10,6 +10,7 @@ dependencies:
   module:
     - content_moderation
     - path
+    - comparator
 id: node.text_for_comparison.default
 targetEntityType: node
 bundle: text_for_comparison
