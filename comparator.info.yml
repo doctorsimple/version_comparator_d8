@@ -10,5 +10,8 @@ core: 8.x
 
 dependencies:
   - drupal:views
+  - drupal:rest
+  - drupal:serialization
+  - drupal:content_moderation
 
 configure: comparator.settings
