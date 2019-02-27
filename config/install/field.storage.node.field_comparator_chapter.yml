@@ -1,8 +1,9 @@
 langcode: en
 status: true
 dependencies:
-  module:
-    - node
+  enforced:
+    module:
+      - comparator
 id: node.field_comparator_chapter
 field_name: field_comparator_chapter
 entity_type: node
