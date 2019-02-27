@@ -10,7 +10,7 @@ function addTranslator(e){
   //  var $t = jQuery('#translators');
   var tname = e.target.value;
   var $textswrapper = jQuery('#textswrapper');
-  $textswrapper.append("<div id='tilethrobber'><i class='glyphicon glyphicon-refresh glyphicon-spin'>PLaceholder</i></div>");
+  jQuery('#selectbuttonswrapper').append("<div id='tilethrobber'></div>");
   var $removedbutton = jQuery(e.target).detach();
   jQuery.post(
       drupalSettings.path.baseUrl+'views/ajax',
@@ -22,10 +22,9 @@ function addTranslator(e){
       function(response) {
         for (r in response)
         {
-
           if (response[r].command == 'insert' && response[r].method == 'replaceWith') {
             var viewHtml = response[r].data;
-            $textswrapper.find('#tilethrobber').remove();
+            jQuery('#tilethrobber').remove();
             $textswrapper.append(viewHtml);
             jQuery('.vc-book-header').width('auto');
             jQuery('#textswrapper .view-header').width('auto');

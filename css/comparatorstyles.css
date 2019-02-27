@@ -56,3 +56,16 @@
 #textswrapper  .vc-book-header.affix {
   border-bottom: 2px solid #cccccc;
 }
+#tilethrobber {
+  height: 30px;
+  width: 30px;
+  background: transparent url(../images/bookicon.svg) center center;
+  animation: spinning 3s;
+  display: inline-block;
+  vertical-align:bottom;
+}
+
+@keyframes spinning {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
