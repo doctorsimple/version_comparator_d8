@@ -1,5 +1,6 @@
 #selectbuttonswrapper {
   margin-bottom : .3em;
+  min-height: 2em;
 }
 
 #selectbuttonswrapper button.author-select {
@@ -13,20 +14,21 @@
   justify-content: space-between;
   align-items: flex-start;
   overflow:auto;
-  height: 100%;
+  height: 90%;
   min-height: 60px;
   bottom: 10px;
 }
 #textswrapper .view-comparator-book {
   margin: 0 1em 0 0;
   border: 2px black solid;
+  border-top: 0px;
   border-radius: 2px;
   flex: 0 1 100%;
   background: rgb(227,236,207);
 }
 #textswrapper .view-header {
   position: sticky;
-  top:1px;
+  top:0px;
 }
 #textswrapper .views-row {
   padding: 1em .6em 2em;
@@ -46,6 +48,7 @@
   top:0;
   background: rgb(227,236,207);
   background: linear-gradient(120deg, rgba(227,236,207,0.968207351299895) 0%, rgba(207,203,157,1) 100%);
+  border-top:2px solid black;
   text-align: left;
 }
 #textswrapper  .vc-book-header .translator-name {
@@ -72,4 +75,21 @@
 @keyframes spinning {
   from {transform:rotate(0deg);}
   to {transform:rotate(360deg);}
+}
+
+.fullscreen-block {
+  position: absolute !important;
+  top:5%;
+  left: 5%;
+  width: 95%;
+  height: 90vh;
+  background-color: white;
+  z-index:40;
+  border:10px solid rgba(195,195,195,.2);
+  box-shadow: 5px 5px 12px #ccc;
+}
+
+button.fullscreen, button.undofullscreen {
+  float: right;
+  margin-right: 1em;
 }

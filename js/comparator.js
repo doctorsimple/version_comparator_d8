@@ -1,6 +1,19 @@
 Drupal.behaviors.versionComparator = {
   attach : function(context, settings) {
-    jQuery('#selectbuttonswrapper', context).on('click', '.author-select',  addTranslator)
+    jQuery('#selectbuttonswrapper', context).on('click', '.author-select',  addTranslator);
+    jQuery('button.fullscreen', context).on('click', function(e) {
+      var $button = jQuery(e.target);
+      jQuery( $button.data('target') ).addClass('fullscreen-block');
+      $button.addClass('hidden');
+      jQuery('button.undofullscreen').removeClass('hidden');
+      jQuery(window).scrollTop(0);
+    });
+    jQuery('button.undofullscreen', context).on('click', function(e) {
+      var $button = jQuery(e.target);
+      jQuery( $button.data('target') ).removeClass('fullscreen-block');
+      $button.addClass('hidden');
+      jQuery('button.fullscreen').removeClass('hidden');
+    })
   }
 
 
@@ -40,9 +53,9 @@ function addTranslator(e){
             });
             //Set headers
             jQuery('.vc-book-header').each(function (i) {
-              var setwidth = jQuery(this).parents('.view-header').width();
-              jQuery(this).width(setwidth);
-              jQuery(this).parents('.view-header').width(setwidth);
+              // var setwidth = jQuery(this).parents('.view-header').width();
+              // jQuery(this).width(setwidth);
+              // jQuery(this).parents('.view-header').width(setwidth);
             })
             // jQuery('#textswrapper .vc-book-header')
             //     .affix({
