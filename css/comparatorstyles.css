@@ -93,3 +93,8 @@ button.fullscreen, button.undofullscreen {
   float: right;
   margin-right: 1em;
 }
+
+body.nobody {
+  position:fixed;
+  margin-left: -100%
+}

@@ -7,7 +7,7 @@ Drupal.behaviors.versionComparator = {
       jQuery('#textswrapper').parent('div').height('90%');
       $button.addClass('hidden');
       jQuery('button.undofullscreen').removeClass('hidden');
-      jQuery(window).scrollTop(0);
+      jQuery('body').addClass('nobody');
     });
     jQuery('button.undofullscreen', context).on('click', function(e) {
       var $button = jQuery(e.target);
@@ -15,6 +15,7 @@ Drupal.behaviors.versionComparator = {
       $button.addClass('hidden');
       jQuery('#textswrapper').parent('div').height('auto');
       jQuery('button.fullscreen').removeClass('hidden');
+      jQuery('body').removeClass('nobody');
     })
   }
 
