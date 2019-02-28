@@ -77,7 +77,8 @@
 }
 
 .fullscreen-block {
-  position: absolute !important;
+  position: fixed !important;
+  overflow: hidden;
   top:5%;
   left: 5%;
   width: 95%;

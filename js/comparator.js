@@ -4,6 +4,7 @@ Drupal.behaviors.versionComparator = {
     jQuery('button.fullscreen', context).on('click', function(e) {
       var $button = jQuery(e.target);
       jQuery( $button.data('target') ).addClass('fullscreen-block');
+      jQuery('#textswrapper').parent('div').height('90%');
       $button.addClass('hidden');
       jQuery('button.undofullscreen').removeClass('hidden');
       jQuery(window).scrollTop(0);
@@ -12,6 +13,7 @@ Drupal.behaviors.versionComparator = {
       var $button = jQuery(e.target);
       jQuery( $button.data('target') ).removeClass('fullscreen-block');
       $button.addClass('hidden');
+      jQuery('#textswrapper').parent('div').height('auto');
       jQuery('button.fullscreen').removeClass('hidden');
     })
   }
